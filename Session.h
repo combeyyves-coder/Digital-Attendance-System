@@ -2,7 +2,9 @@
 #define SESSION_H
 
 #include <iostream>
-#include <vector>
+#include <string>
+#include <map>
+
 using namespace std;
 
 class AttendanceSession {
@@ -11,6 +13,9 @@ public:
     string date;
     string startTime;
     int duration;
+
+    // Week 3: attendance storage
+    map<string, string> attendance;
 
     AttendanceSession() {}
 
@@ -21,12 +26,18 @@ public:
         duration = dur;
     }
 
+    // Week 2
     void displaySession() {
         cout << "Course Code: " << courseCode << endl;
         cout << "Date: " << date << endl;
         cout << "Start Time: " << startTime << endl;
         cout << "Duration: " << duration << " minutes" << endl;
     }
+
+    // Week 3
+    void markAttendance(string indexNumber);
+    void displayAttendance();
+    void displayAttendanceSummary();
 };
 
 #endif
